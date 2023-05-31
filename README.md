@@ -11,9 +11,9 @@ With a sleek and intuitive interface, the app allows users to explore the fascin
 
 ## Technologies Used
 - [Vite](https://vitejs.dev/): Fast and lightweight development server and build tool.
-- [React DOM]: Provides methods for interacting with the DOM.
-- [Sass]: Preprocessor scripting language for CSS.
-- [async/await]: JavaScript syntax for handling asynchronous operations.
+- [React DOM](https://es.legacy.reactjs.org/docs/react-dom.html): Provides methods for interacting with the DOM.
+- [Sass](https://es.vitejs.dev/guide/features.html#css): Preprocessor scripting language for CSS.
+- [async/await](https://handsonreact.com/docs/promises-async-await): JavaScript syntax for handling asynchronous operations.
 - [CSS Modules](https://github.com/css-modules/css-modules): CSS file transformation that locally scopes the class names.
 
 ## Getting Started
