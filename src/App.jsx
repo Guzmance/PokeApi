@@ -1,6 +1,8 @@
 // Components
 import { Button } from './Components/Button';
 import { Card } from './Components/Card';
+import { TitleBanner } from './Components/TitleBanner';
+import { Footer } from './Components/Footer';
 // Styles
 import './sass/App.scss';
 // Icons
@@ -58,6 +60,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <TitleBanner />
       <div className={`card_container card${pokemonEvolutions.length}`}>
         {pokemonEvolutions.map((pokemon) => (
           <Card key={pokemon[0]} name={pokemon[0]} img={pokemon[1]} />
@@ -67,6 +70,7 @@ const App = () => {
         <Button icon={<TiArrowLeftOutline />} handleClick={prevClick} />
         <Button icon={<TiArrowRightOutline />} handleClick={nextClick} />
       </div>
+      <Footer />
     </div>
   );
 };
