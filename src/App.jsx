@@ -28,18 +28,18 @@ const App = () => {
     let pokemonLv1Img = await getPokemonImg(pokemonLv1);
     pokemonEvolutionArray.push([pokemonLv1, pokemonLv1Img]);
 
-    if (data.chain.evolves_to.lenght != 0) {
+    if (data.chain.evolves_to.length != 0) {
       let pokemonLv2 = data.chain.evolves_to[0].species.name;
       let pokemonLv2Img = await getPokemonImg(pokemonLv2);
       pokemonEvolutionArray.push([pokemonLv2, pokemonLv2Img]);
 
-      if (data.chain.evolves_to[0].evolves_to.lenght != 0) {
+      if (data.chain.evolves_to[0].evolves_to.length != 0) {
         let pokemonLv3 = data.chain.evolves_to[0].evolves_to[0].species.name;
         let pokemonLv3Img = await getPokemonImg(pokemonLv3);
         pokemonEvolutionArray.push([pokemonLv3, pokemonLv3Img]);
-        setPokemonEvolutions(pokemonEvolutionArray);
       }
     }
+    setPokemonEvolutions(pokemonEvolutionArray);
   }
 
   async function getPokemonImg(name) {
@@ -57,8 +57,8 @@ const App = () => {
   }
 
   return (
-    <>
-      <div className="card_container">
+    <div className="app">
+      <div className={`card_container card${pokemonEvolutions.length}`}>
         {pokemonEvolutions.map((pokemon) => (
           <Card key={pokemon[0]} name={pokemon[0]} img={pokemon[1]} />
         ))}
@@ -67,7 +67,7 @@ const App = () => {
         <Button icon={<TiArrowLeftOutline />} handleClick={prevClick} />
         <Button icon={<TiArrowRightOutline />} handleClick={nextClick} />
       </div>
-    </>
+    </div>
   );
 };
 
